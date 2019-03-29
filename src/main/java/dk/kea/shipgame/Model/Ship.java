@@ -11,12 +11,13 @@ public class Ship {
     private int direction; //burde være en ENUM
     private int hull_health; //0 - 100
     private int sail_health; //0 - 100
+    private int canons; //0 - MAX_KANONER afhængigt af, hvor mange der virker
     private int sailors; //0 - MAX_SAILORS
 
     public Ship() {
     }
 
-    public Ship(int shipId, String name, int x, int y, int direction, int hull_health, int sail_health, int sailors) {
+    public Ship(int shipId, String name, int x, int y, int direction, int hull_health, int sail_health, int canons, int sailors) {
         this.shipId = shipId;
         this.name = name;
         this.x = x;
@@ -24,6 +25,7 @@ public class Ship {
         this.direction = direction;
         this.hull_health = hull_health;
         this.sail_health = sail_health;
+        this.canons = canons;
         this.sailors = sailors;
     }
 
@@ -54,6 +56,8 @@ public class Ship {
     public int getSail_health() {
         return sail_health;
     }
+
+    public int getCanons(){ return canons; }
 
     public int getSailors() {
         return sailors;
@@ -86,6 +90,8 @@ public class Ship {
     public void setSail_health(int sail_health) {
         this.sail_health = sail_health;
     }
+
+    public void setCanons(int canons) { this.canons = canons; }
 
     public void setSailors(int sailors) {
         this.sailors = sailors;
