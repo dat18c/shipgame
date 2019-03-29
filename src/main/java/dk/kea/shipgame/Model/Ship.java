@@ -1,28 +1,30 @@
 package dk.kea.shipgame.Model;
 
-import java.util.Objects;
-
 public class Ship {
 
     private int shipId;
+    private String nationality;
     private String name;
     private int x;
     private int y;
     private int direction; //burde være en ENUM
+    private int speed;
     private int hull_health; //0 - 100
     private int sail_health; //0 - 100
-    private int canons; //0 - MAX_KANONER afhængigt af, hvor mange der virker
+    private int canons; //0 - MAX_KANONER afhængigt af, hvor mange der virker - max halvdelen skyder
     private int sailors; //0 - MAX_SAILORS
 
     public Ship() {
     }
 
-    public Ship(int shipId, String name, int x, int y, int direction, int hull_health, int sail_health, int canons, int sailors) {
+    public Ship(int shipId, String nationality, String name, int x, int y, int direction, int speed, int hull_health, int sail_health, int canons, int sailors) {
         this.shipId = shipId;
+        this.nationality = nationality;
         this.name = name;
         this.x = x;
         this.y = y;
         this.direction = direction;
+        this.speed = speed;
         this.hull_health = hull_health;
         this.sail_health = sail_health;
         this.canons = canons;
@@ -31,6 +33,10 @@ public class Ship {
 
     public int getShipId() {
         return shipId;
+    }
+
+    public String getNationality() {
+        return nationality;
     }
 
     public String getName() {
@@ -48,6 +54,8 @@ public class Ship {
     public int getDirection() {
         return direction;
     }
+
+    public int getSpeed() { return speed; }
 
     public int getHull_health() {
         return hull_health;
@@ -67,6 +75,10 @@ public class Ship {
         this.shipId = shipId;
     }
 
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -82,6 +94,8 @@ public class Ship {
     public void setDirection(int direction) {
         this.direction = direction;
     }
+
+    public void setSpeed(int speed ) { this.speed = speed; }
 
     public void setHull_health(int hull_health) {
         this.hull_health = hull_health;
