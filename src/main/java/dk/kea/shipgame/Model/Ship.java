@@ -3,6 +3,7 @@ package dk.kea.shipgame.Model;
 public class Ship {
 
     private int shipId;
+    private int shipType;
     private String nationality;
     private String name;
     private int x;
@@ -19,6 +20,7 @@ public class Ship {
 
     public Ship(int shipId, String nationality, String name, int x, int y, int direction, int speed, int hull_health, int sail_health, int canons, int sailors) {
         this.shipId = shipId;
+        this.shipType = shipType;
         this.nationality = nationality;
         this.name = name;
         this.x = x;
@@ -33,6 +35,10 @@ public class Ship {
 
     public int getShipId() {
         return shipId;
+    }
+
+    public int getShipType() {
+        return shipType;
     }
 
     public String getNationality() {
@@ -73,6 +79,10 @@ public class Ship {
 
     public void setShipId(int shipId) {
         this.shipId = shipId;
+    }
+
+    public void setShipType(int shipType) {
+        this.shipType = shipType;
     }
 
     public void setNationality(String nationality) {
