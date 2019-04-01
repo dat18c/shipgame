@@ -8,8 +8,8 @@ public class Ship {
     private String name;
     private int x;
     private int y;
-    private int direction; //burde være en ENUM
-    private int speed;
+    private Direction direction; //ENUM, N, NE, SE, S, SW, NW
+    private int speed; //change: speed last round +/- calculated change
     private int hull_health; //0 - 100
     private int sail_health; //0 - 100
     private int canons; //0 - MAX_KANONER afhængigt af, hvor mange der virker - max halvdelen skyder
@@ -18,7 +18,7 @@ public class Ship {
     public Ship() {
     }
 
-    public Ship(int shipId, String nationality, String name, int x, int y, int direction, int speed, int hull_health, int sail_health, int canons, int sailors) {
+    public Ship(int shipId, int shipType, String nationality, String name, int x, int y, Direction direction, int speed, int hull_health, int sail_health, int canons, int sailors) {
         this.shipId = shipId;
         this.shipType = shipType;
         this.nationality = nationality;
@@ -57,7 +57,7 @@ public class Ship {
         return y;
     }
 
-    public int getDirection() {
+    public Direction getDirection() {
         return direction;
     }
 
@@ -101,7 +101,7 @@ public class Ship {
         this.y = y;
     }
 
-    public void setDirection(int direction) {
+    public void setDirection(Direction direction) {
         this.direction = direction;
     }
 

@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Order {
 
     private int shipId;
+    private int turnNumber; //which turn does the order belong to
     private int turn; //sharp left, left, straight, right, sharp right - Enum?
     private int sailUsage; //sail percentage 0 25 50 75 100 (depending on MAX_SPEED
     private boolean fire; //shoot?

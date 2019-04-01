@@ -1,22 +1,22 @@
 package dk.kea.shipgame.Model;
 
 public class Weather {
-    private int windDirection;
-    private int windSpeed;
+    private Direction windDirection; //ENUM N, NE, SE, S, SW, NW
+    private int windSpeed; //0 - 5
 
     public Weather() {
     }
 
-    public Weather(int windDirection, int windSpeed) {
+    public Weather(Direction windDirection, int windSpeed) {
         this.windDirection = windDirection;
         this.windSpeed = windSpeed;
     }
 
-    public int getWindDirection() {
+    public Direction getWindDirection() {
         return windDirection;
     }
 
-    public void setWindDirection(int windDirection) {
+    public void setWindDirection(Direction windDirection) {
         this.windDirection = windDirection;
     }
 
