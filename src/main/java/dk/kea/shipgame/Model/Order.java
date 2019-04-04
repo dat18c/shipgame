@@ -8,18 +8,21 @@ public class Order {
     private int turnNumber; //which turn does the order belong to
     private int turn; //sharp left, left, straight, right, sharp right - Enum?
     private int sailUsage; //sail percentage 0 25 50 75 100 (depending on MAX_SPEED
-    private boolean fire; //shoot?
+    private boolean fire; //shoot? only possible if not loading
+    private boolean load; //order load
     private int ammunitionType; //0=canonball, 1=chainball, 2=grapeshot
     private int target; //not possible to shoot straight forward or backward - Enum?
 
     public Order() {
     }
 
-    public Order(int shipId, int turn, int sailUsage, boolean fire, int ammunitionType, int target) {
+    public Order(int shipId, int turnNumber, int turn, int sailUsage, boolean fire, boolean load, int ammunitionType, int target) {
         this.shipId = shipId;
+        this.turnNumber = turnNumber;
         this.turn = turn;
         this.sailUsage = sailUsage;
         this.fire = fire;
+        this.load = load;
         this.ammunitionType = ammunitionType;
         this.target = target;
     }
@@ -30,6 +33,14 @@ public class Order {
 
     public void setShipId(int shipId) {
         this.shipId = shipId;
+    }
+
+    public int getTurnNumber() {
+        return turnNumber;
+    }
+
+    public void setTurnNumber(int turnNumber) {
+        this.turnNumber = turnNumber;
     }
 
     public int getTurn() {
@@ -52,12 +63,20 @@ public class Order {
         return fire;
     }
 
-    public int isAmmunitionType() {
-        return ammunitionType;
-    }
-
     public void setFire(boolean fire) {
         this.fire = fire;
+    }
+
+    public boolean isLoad() {
+        return load;
+    }
+
+    public void setLoad(boolean load) {
+        this.load = load;
+    }
+
+    public int getAmmunitionType() {
+        return ammunitionType;
     }
 
     public void setAmmunitionType(int ammunitionType) {
@@ -71,5 +90,4 @@ public class Order {
     public void setTarget(int target) {
         this.target = target;
     }
-
 }
