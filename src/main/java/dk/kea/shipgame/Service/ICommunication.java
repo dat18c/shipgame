@@ -6,11 +6,8 @@ import dk.kea.shipgame.Model.Weather;
 
 import java.util.List;
 
-public interface IGameTurn {
+public interface ICommunication {
     public boolean initComm(String ip); //returns true if server - use to determine if to send Weather
     public void exchangeMovesAttacks(List<Ship> ships, List<Order> orders, Weather weather); //exchange orders and weather
-    public void movement(List<Ship> ships, List<Order> orders, Weather weather); //move ships and resolve collisions
-    public void resolveAttackOwn(List<Ship> ships, List<Order> orders); //takes ship and their orders and fire - resolve damage
     public void exchangeAttackResolved(List<Ship> ships, List<Order> orders); //receive info on enemy surviving ships
-    public void evaluateVictoryConditions(List<Ship> ships, List<Order> orders); //max turns, no ships moving, ships eliminated
 }
