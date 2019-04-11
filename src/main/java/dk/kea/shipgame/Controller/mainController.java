@@ -14,10 +14,10 @@ public class mainController {
     @GetMapping("/")
     public String index(Model model){
         List<MyImage> images = new ArrayList<>();
-        images.add(new MyImage(1, "camel", 100, 100));
-        images.add(new MyImage(2, "terminator", 300, 400));
-        images.add(new MyImage(3, "camel", 100, 400));
-        images.add(new MyImage(4, "terminator", 300, 100));
+        images.add(new MyImage(1, "camel", 90, 90));
+        images.add(new MyImage(2, "terminator", 305, 407));
+        images.add(new MyImage(3, "camel", 105, 407));
+        images.add(new MyImage(4, "terminator", 290, 90));
         model.addAttribute("images", images);
         return "Ship-placement.html";
     }
