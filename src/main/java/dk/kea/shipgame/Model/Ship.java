@@ -14,11 +14,12 @@ public class Ship {
     private int sail_health; //0 - 100
     private int sailors; //0 - MAX_SAILORS
     private int load; //load time
+    private int currentAmmunitionType; //0=canonball, 1=chainball, 2=grapeshot
 
     public Ship() {
     }
 
-    public Ship(int shipId, int shipType, String nationality, String name, int x, int y, Direction direction, int speed, int hull_health, int sail_health, int load, int sailors) {
+    public Ship(int shipId, int shipType, String nationality, String name, int x, int y, Direction direction, int speed, int hull_health, int sail_health, int sailors, int load, int currentAmmunitionType) {
         this.shipId = shipId;
         this.shipType = shipType;
         this.nationality = nationality;
@@ -29,8 +30,17 @@ public class Ship {
         this.speed = speed;
         this.hull_health = hull_health;
         this.sail_health = sail_health;
-        this.load = load;
         this.sailors = sailors;
+        this.load = load; //2 if change ammunition, 1 if loading, 0 if ready to shoot
+        this.currentAmmunitionType = currentAmmunitionType;
+    }
+
+    public int getCurrentAmmunitionType() {
+        return currentAmmunitionType;
+    }
+
+    public void setCurrentAmmunitionType(int currentAmmunitionType) {
+        this.currentAmmunitionType = currentAmmunitionType;
     }
 
     public int getShipId() {
