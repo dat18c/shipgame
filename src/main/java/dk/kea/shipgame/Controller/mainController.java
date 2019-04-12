@@ -19,6 +19,6 @@ public class mainController {
         images.add(new MyImage(3, "camel", 105, 407));
         images.add(new MyImage(4, "terminator", 290, 90));
         model.addAttribute("images", images);
-        return "Ship-placement.html";
+        return "Ship-placement";
     }
 }
