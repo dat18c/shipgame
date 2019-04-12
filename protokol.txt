@@ -5,8 +5,15 @@ Først sendes vejr (W:)
 Dernæst sendes alle skibe (S:)
 Til sidst sendes alle ordrer (O:) -- (skal de med over?)
 
-## Format
+## Format exchangeWeather
 W:windDirection:windSpeed:
-S:liste af skibsattributer adskilt med ::
+END
+
+## Format exchangeOrder
+S:liste af skibsattributer adskilt med :
+flyt- koordinater sendes som par af x, y afsluttet med EndCoordinate
+eks.
+1,1:2,1:2,2:EndCoordinate
+
 O:liste af ordreattributer adskilt med :
 END
